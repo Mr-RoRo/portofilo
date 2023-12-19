@@ -1,12 +1,26 @@
-import { Container, Stack, Switch, Typography, styled } from "@mui/material";
+import {
+  Container,
+  Drawer,
+  IconButton,
+  Stack,
+  Switch,
+  Typography,
+  styled,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useState } from "react";
 import { useThemeContext } from "../../Theme/ThemeContextProvider";
 import { keyframes } from "@emotion/react";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const NavBar = () => {
   const { mode, toggleColorMode } = useThemeContext();
   const [ScrollY, setScrollY] = useState(Number);
+  const [modalOpen, setModalOpen] = useState(false);
   const [selectedSec, setSelectedSec] = useState("");
+  const theme = useTheme();
+  const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const navInfo = [
     { id: 1, title: "Home", Y: 0 },
     { id: 2, title: "About", Y: 400 },
@@ -91,6 +105,39 @@ const NavBar = () => {
       borderRadius: 20 / 2,
     },
   }));
+  const navBarContent = (
+    <Stack
+      flexDirection={TabletAndMobile ? "column" : "row"}
+      gap="20px"
+      alignItems="center"
+      width={TabletAndMobile ? "250px" : "auto"}
+      pt={TabletAndMobile ? "20px" : "0"}
+    >
+      {navInfo.map((item) => (
+        <Typography
+          key={item.id}
+          borderBottom={TabletAndMobile ? "1px solid" : "none"}
+          borderColor="background.default"
+          width="100%"
+          textAlign="center"
+          pb={TabletAndMobile ? "25px" : "0"}
+          onClick={() => {
+            scrollTo({
+              top: item.Y,
+              behavior: "smooth",
+            });
+            setSelectedSec(item.title);
+          }}
+          sx={{ cursor: "pointer", transition: "color 0.2s ease-in-out" }}
+          variant="h3"
+          color={selectedSec == item.title ? "primary" : "text.primary"}
+        >
+          {item.title}
+        </Typography>
+      ))}
+      <MaterialUISwitch onClick={toggleColorMode} defaultChecked />
+    </Stack>
+  );
   return (
     <Stack
       bgcolor="background.default"
@@ -116,26 +163,22 @@ const NavBar = () => {
           </Typography>
           IAL
         </Typography>
-        <Stack flexDirection="row" gap="20px" alignItems="center">
-          {navInfo.map((item) => (
-            <Typography
-              key={item.id}
-              onClick={() => {
-                scrollTo({
-                  top: item.Y,
-                  behavior: "smooth",
-                });
-                setSelectedSec(item.title);
-              }}
-              sx={{ cursor: "pointer", transition: "color 0.2s ease-in-out" }}
-              variant="h3"
-              color={selectedSec == item.title ? "primary" : "text.primary"}
+        {!TabletAndMobile && navBarContent}
+        {TabletAndMobile && (
+          <>
+            <IconButton onClick={() => setModalOpen(true)}>
+              <MenuIcon />
+            </IconButton>
+
+            <Drawer
+              anchor="right"
+              open={modalOpen}
+              onClose={() => setModalOpen(false)}
             >
-              {item.title}
-            </Typography>
-          ))}
-          <MaterialUISwitch onClick={toggleColorMode} defaultChecked />
-        </Stack>
+              {navBarContent}
+            </Drawer>
+          </>
+        )}
       </Container>
     </Stack>
   );

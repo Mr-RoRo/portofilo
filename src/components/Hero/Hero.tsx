@@ -1,14 +1,28 @@
-import { Container, Stack, Typography } from "@mui/material";
+import {
+  Container,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import profile from "../../assets/profile.png";
 const Hero = () => {
+  const theme = useTheme();
+  const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Stack width="100%" mt="200px" mb="150px">
+    <Stack
+      width="100%"
+      mt={TabletAndMobile ? "100px" : "200px"}
+      mb={TabletAndMobile ? "100px" : "150px"}
+    >
       <Container
         sx={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: "80px",
+          gap: TabletAndMobile ? "40px" : "80px",
+          flexDirection: TabletAndMobile ? "column-reverse" : "row",
+          textAlign: TabletAndMobile ? "center" : "left",
         }}
       >
         <Stack>

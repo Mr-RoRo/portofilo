@@ -1,4 +1,12 @@
-import { Container, Fab, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Container,
+  Fab,
+  IconButton,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
@@ -6,6 +14,8 @@ import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 const Icons = [<GitHubIcon />, <InstagramIcon />, <TelegramIcon />];
 
 const Footer = () => {
+  const theme = useTheme();
+  const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Stack width="100%" position="relative">
       <Container
@@ -35,6 +45,7 @@ const Footer = () => {
         <Typography>©2023 | All Rights Reserved</Typography>
       </Container>
       <Fab
+        size={TabletAndMobile ? "small" : "medium"}
         color="primary"
         sx={{ position: "absolute", right: "10px", bottom: "10px" }}
         onClick={() => {

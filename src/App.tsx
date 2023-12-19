@@ -13,7 +13,7 @@ function App() {
     <Stack>
       <NavBar />
       <Hero />
-      <AboutMe />
+      {/* <AboutMe /> */}
       <Skills />
       <Projects />
       <Footer />
