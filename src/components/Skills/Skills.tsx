@@ -52,7 +52,7 @@ const Skills = () => {
         }}
       >
         <TitleShape title="My Skills" />
-        <Grid container xl={13} justifyContent="center" spacing={3}>
+        <Grid container xl={16} justifyContent="center" spacing={4} pt="15px">
           {skillsInfo.map((item) => (
             <Grid key={item.id} item>
               <Stack
@@ -61,6 +61,12 @@ const Skills = () => {
                 width="350px"
                 height="300px"
                 borderRadius="12px"
+                sx={{
+                  transition: "transform 0.2s ease-in-out",
+                  ":hover": {
+                    transform: "scale(1.05)",
+                  },
+                }}
               >
                 <Typography variant="h3">{item.title}</Typography>
                 <Divider
