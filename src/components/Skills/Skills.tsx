@@ -61,6 +61,7 @@ const Skills = () => {
                 width="350px"
                 height="300px"
                 borderRadius="12px"
+                bgcolor="background.paper"
                 sx={{
                   transition: "transform 0.2s ease-in-out",
                   ":hover": {

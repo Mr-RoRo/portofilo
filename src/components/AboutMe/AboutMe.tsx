@@ -1,6 +1,5 @@
 import {
   Container,
-  Divider,
   IconButton,
   Stack,
   Typography,
@@ -23,7 +22,7 @@ const AboutMe = () => {
   const theme = useTheme();
   const large = useMediaQuery(theme.breakpoints.up("xl"));
   return (
-    <Stack width="100%" bgcolor="primary.light" position="relative">
+    <Stack width="100%" bgcolor="background.paper" position="relative">
       <Container
         sx={{
           py: "80px",
@@ -102,7 +101,7 @@ const AboutMe = () => {
           fontSize="85px"
           color="#e4eef8"
         >
-          HTML
+          H T M L
         </Typography>
       )}
     </Stack>

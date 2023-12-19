@@ -5,7 +5,9 @@ import AboutMe from "./components/AboutMe/AboutMe";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
-
+if (localStorage.getItem("theme") == null) {
+  localStorage.setItem("theme", "light");
+}
 function App() {
   return (
     <Stack>

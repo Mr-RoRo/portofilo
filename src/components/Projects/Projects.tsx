@@ -32,7 +32,7 @@ const projects = [
 ];
 const Projects = () => {
   return (
-    <Stack width="100%" bgcolor="primary.light">
+    <Stack width="100%" bgcolor="background.paper">
       <Container
         sx={{
           py: "80px",
@@ -50,7 +50,7 @@ const Projects = () => {
                 width="300px"
                 height="350px"
                 borderRadius="12px"
-                bgcolor="white"
+                bgcolor="background.default"
                 sx={{
                   transition: "transform 0.2s ease-in-out",
                   ":hover": {
