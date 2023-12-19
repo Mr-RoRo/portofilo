@@ -82,7 +82,12 @@ const Skills = () => {
                 />
                 <Stack gap="20px">
                   {item.listItem.map((thing) => (
-                    <Stack flexDirection="row" alignItems="center" gap="5px">
+                    <Stack
+                      key={thing}
+                      flexDirection="row"
+                      alignItems="center"
+                      gap="5px"
+                    >
                       <RadioButtonCheckedIcon
                         color="primary"
                         fontSize="small"

@@ -18,9 +18,13 @@ const AboutInfo = [
   { id: 4, title: "Location", content: "qom" },
 ];
 const Icons = [
-  { link: "https://github.com/mR-RoRo", icon: <GitHubIcon /> },
-  { link: "https://www.instagram.com/mr.ro.ro/", icon: <InstagramIcon /> },
-  { link: "https://t.me/MrRoRo", icon: <TelegramIcon /> },
+  { id: 1, link: "https://github.com/mR-RoRo", icon: <GitHubIcon /> },
+  {
+    id: 2,
+    link: "https://www.instagram.com/mr.ro.ro/",
+    icon: <InstagramIcon />,
+  },
+  { id: 3, link: "https://t.me/MrRoRo", icon: <TelegramIcon /> },
 ];
 const AboutMe = () => {
   const theme = useTheme();
@@ -53,7 +57,7 @@ const AboutMe = () => {
           <TitleShape title="About Me" />
           <Stack>
             {AboutInfo.map((info) => (
-              <Stack flexDirection="row" alignItems="center">
+              <Stack key={info.id} flexDirection="row" alignItems="center">
                 <Typography
                   width={TabletAndMobile ? "90px" : "100px"}
                   variant="body1"
@@ -100,6 +104,7 @@ const AboutMe = () => {
               >
                 {Icons.map((icon) => (
                   <IconButton
+                    key={icon.id}
                     sx={{
                       p: "6px 8px",
                       bgcolor: "white",

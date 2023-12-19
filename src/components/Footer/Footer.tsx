@@ -12,9 +12,13 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 const Icons = [
-  { link: "https://github.com/mR-RoRo", icon: <GitHubIcon /> },
-  { link: "https://www.instagram.com/mr.ro.ro/", icon: <InstagramIcon /> },
-  { link: "https://t.me/MrRoRo", icon: <TelegramIcon /> },
+  { id: 1, link: "https://github.com/mR-RoRo", icon: <GitHubIcon /> },
+  {
+    id: 2,
+    link: "https://www.instagram.com/mr.ro.ro/",
+    icon: <InstagramIcon />,
+  },
+  { id: 3, link: "https://t.me/MrRoRo", icon: <TelegramIcon /> },
 ];
 
 const Footer = () => {
@@ -34,6 +38,7 @@ const Footer = () => {
         <Stack flexDirection="row" color="primary.main" gap="10px">
           {Icons.map((icon) => (
             <IconButton
+              key={icon.id}
               sx={{
                 p: "6px 8px",
                 bgcolor: "white",
