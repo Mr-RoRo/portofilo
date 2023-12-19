@@ -17,10 +17,15 @@ const AboutInfo = [
   { id: 3, title: "E-mail", content: "fsoocity@gmail.com" },
   { id: 4, title: "Location", content: "qom" },
 ];
-const Icons = [<GitHubIcon />, <InstagramIcon />, <TelegramIcon />];
+const Icons = [
+  { link: "https://github.com/mR-RoRo", icon: <GitHubIcon /> },
+  { link: "https://www.instagram.com/mr.ro.ro/", icon: <InstagramIcon /> },
+  { link: "https://t.me/MrRoRo", icon: <TelegramIcon /> },
+];
 const AboutMe = () => {
   const theme = useTheme();
   const large = useMediaQuery(theme.breakpoints.up("xl"));
+  const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Stack width="100%" bgcolor="background.paper" position="relative">
       <Container
@@ -29,8 +34,8 @@ const AboutMe = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          gap: "70px",
-          flexDirection: "row",
+          gap: TabletAndMobile ? "40px" : "50px",
+          flexDirection: TabletAndMobile ? "column" : "row",
         }}
       >
         <Stack
@@ -41,28 +46,42 @@ const AboutMe = () => {
           width="270px"
           height="250px"
         />
-        <Stack width="900px">
+        <Stack
+          alignItems={TabletAndMobile ? "center" : "flex-start"}
+          width={TabletAndMobile ? "auto" : "800px"}
+        >
           <TitleShape title="About Me" />
-          {AboutInfo.map((info) => (
-            <Stack flexDirection="row" alignItems="center">
-              <Typography width="190px" variant="body1" color="secondary">
-                {info.title}
-              </Typography>
-              <Typography
-                width="40px"
-                fontWeight="bold"
-                fontSize="18px"
-                component="span"
-                color="primary.main"
-              >
-                :
-              </Typography>
-              <Typography variant="body1" color="secondary">
-                {info.content}
-              </Typography>
-            </Stack>
-          ))}
-          <Stack mt="25px" gap="25px">
+          <Stack>
+            {AboutInfo.map((info) => (
+              <Stack flexDirection="row" alignItems="center">
+                <Typography
+                  width={TabletAndMobile ? "90px" : "100px"}
+                  variant="body1"
+                  color="secondary"
+                >
+                  {info.title}
+                </Typography>
+                <Typography
+                  width={TabletAndMobile ? "20px" : "40px"}
+                  fontWeight="bold"
+                  fontSize="18px"
+                  component="span"
+                  color="primary.main"
+                >
+                  :
+                </Typography>
+                <Typography variant="body1" color="secondary">
+                  {info.content}
+                </Typography>
+              </Stack>
+            ))}
+          </Stack>
+          <Stack
+            mt="25px"
+            gap="25px"
+            alignItems={TabletAndMobile ? "center" : "flex-start"}
+            textAlign={TabletAndMobile ? "center" : "left"}
+          >
             <Typography variant="h2">
               I am Danial Abbaszadeh, Web Developer
             </Typography>
@@ -71,9 +90,14 @@ const AboutMe = () => {
               can develop responsive websites from scratch and raise them into
               modern user-friendly web experiences.
             </Typography>
-            <Stack gap="8px">
+            <Stack gap="10px">
               <Typography variant="body2">Find Me on Social Media:</Typography>
-              <Stack flexDirection="row" color="primary.main" gap="10px">
+              <Stack
+                flexDirection="row"
+                color="primary.main"
+                justifyContent="center"
+                gap="10px"
+              >
                 {Icons.map((icon) => (
                   <IconButton
                     sx={{
@@ -82,9 +106,11 @@ const AboutMe = () => {
                       borderRadius: "12px",
                       boxShadow: 3,
                     }}
+                    href={icon.link}
+                    target="_blank"
                     color="inherit"
                   >
-                    {icon}
+                    {icon.icon}
                   </IconButton>
                 ))}
               </Stack>

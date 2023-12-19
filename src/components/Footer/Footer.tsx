@@ -11,7 +11,11 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
-const Icons = [<GitHubIcon />, <InstagramIcon />, <TelegramIcon />];
+const Icons = [
+  { link: "https://github.com/mR-RoRo", icon: <GitHubIcon /> },
+  { link: "https://www.instagram.com/mr.ro.ro/", icon: <InstagramIcon /> },
+  { link: "https://t.me/MrRoRo", icon: <TelegramIcon /> },
+];
 
 const Footer = () => {
   const theme = useTheme();
@@ -36,9 +40,11 @@ const Footer = () => {
                 borderRadius: "12px",
                 boxShadow: 3,
               }}
+              href={icon.link}
+              target="_blank"
               color="inherit"
             >
-              {icon}
+              {icon.icon}
             </IconButton>
           ))}
         </Stack>
