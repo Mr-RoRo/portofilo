@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
-import { useThemeContext } from "../../Theme/ThemeContextProvider";
+import { useThemeContext } from "../../theme/ThemeContextProvider";
 import { keyframes } from "@emotion/react";
 import MenuIcon from "@mui/icons-material/Menu";
 

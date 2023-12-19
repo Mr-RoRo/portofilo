@@ -1,5 +1,5 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { useThemeContext } from "./ThemeContextProvider";
+import { useThemeContext } from "../theme/ThemeContextProvider";
 const ThemeRigestry = ({ children }: { children: React.ReactNode }) => {
   const { theme } = useThemeContext();
   return (
