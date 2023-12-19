@@ -2,10 +2,13 @@ import { Shadows, createTheme } from "@mui/material";
 
 export const Theme = createTheme({
   palette: {
-    // mode: "light",
+    // mode: "dark",
     primary: {
       main: "#0551da",
       light: "#f2f7fd",
+    },
+    secondary: {
+      main: "#8590b9",
     },
   },
   typography: {
@@ -39,7 +42,7 @@ export const Theme = createTheme({
         : index === 2
         ? "0px 2px 4px 0px rgba(0, 0, 0, 0.25)"
         : index === 3
-        ? "0px 2px 9px 0px rgba(0, 0, 0, 0.1)"
+        ? "0px 2px 9px 0px rgba(0, 0, 0, 0.2)"
         : ""
     ) as Shadows,
   components: {
