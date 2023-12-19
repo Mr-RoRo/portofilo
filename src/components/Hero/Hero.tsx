@@ -18,12 +18,12 @@ const Hero = () => {
           <Typography variant="h3" mt="10px" mb="20px">
             Front End Developer
           </Typography>
-          <Typography lineHeight={1.6} variant="body1">
+          <Typography color="secondary" lineHeight={1.6} variant="body1">
             Hello I’m a self-taught front-end developer based in Qom, Iran. I
             can develop responsive websites from scratch and raise them into
             modern user-friendly web experiences.
           </Typography>
-          <Typography lineHeight={1.6} variant="body1">
+          <Typography color="secondary" lineHeight={1.6} variant="body1">
             I have been studying computer for more than a year and I have been
             working in the web field for 8 months and I enjoy creating different
             sites and it is my way of enjoying my life.

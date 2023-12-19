@@ -46,7 +46,7 @@ const AboutMe = () => {
           <TitleShape title="About Me" />
           {AboutInfo.map((info) => (
             <Stack flexDirection="row" alignItems="center">
-              <Typography width="190px" variant="body1">
+              <Typography width="190px" variant="body1" color="secondary">
                 {info.title}
               </Typography>
               <Typography
@@ -58,14 +58,16 @@ const AboutMe = () => {
               >
                 :
               </Typography>
-              <Typography variant="body1">{info.content}</Typography>
+              <Typography variant="body1" color="secondary">
+                {info.content}
+              </Typography>
             </Stack>
           ))}
           <Stack mt="25px" gap="25px">
             <Typography variant="h2">
               I am Danial Abbaszadeh, Web Developer
             </Typography>
-            <Typography variant="body1">
+            <Typography variant="body1" color="secondary">
               Hello I’m a self-taught front-end developer based in Qom, Iran. I
               can develop responsive websites from scratch and raise them into
               modern user-friendly web experiences.
