@@ -11,6 +11,7 @@ import profile from "../../assets/profile.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import TitleShape from "../TitleShape/TitleShape";
 const AboutInfo = [
   { id: 1, title: "Name", content: "Danial Abbaszadeh" },
   { id: 2, title: "Age", content: "18" },
@@ -42,21 +43,7 @@ const AboutMe = () => {
           height="250px"
         />
         <Stack width="900px">
-          <Typography display="flex" gap="15px" variant="h2" mb="25px">
-            About Me
-            <Divider
-              orientation="vertical"
-              flexItem
-              sx={{
-                width: "60px",
-                height: "2px",
-                border: "2px solid",
-                borderColor: "primary.main",
-                borderRadius: "8px",
-                my: "auto",
-              }}
-            />
-          </Typography>
+          <TitleShape title="About Me" />
           {AboutInfo.map((info) => (
             <Stack flexDirection="row" alignItems="center">
               <Typography width="190px" variant="body1">
