@@ -22,10 +22,10 @@ const NavBar = () => {
   const theme = useTheme();
   const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const navInfo = [
-    { id: 1, title: "Home", Y: 0 },
-    { id: 2, title: "About", Y: 400 },
-    { id: 3, title: "Skills", Y: 1080 },
-    { id: 4, title: "Works", Y: 2000 },
+    { id: 1, title: "Home", linkSection: "#root" },
+    { id: 2, title: "About", linkSection: "#AboutMe" },
+    { id: 3, title: "Skills", linkSection: "#Skills" },
+    { id: 4, title: "Works", linkSection: "#Projects" },
   ];
   const DarkToLight = keyframes`
   from {
@@ -122,15 +122,13 @@ const NavBar = () => {
           textAlign="center"
           pb={TabletAndMobile ? "25px" : "0"}
           onClick={() => {
-            scrollTo({
-              top: item.Y,
-              behavior: "smooth",
-            });
             setSelectedSec(item.title);
           }}
           sx={{ cursor: "pointer", transition: "color 0.2s ease-in-out" }}
           variant="h3"
           color={selectedSec == item.title ? "primary" : "text.primary"}
+          component={"a"}
+          href={item.linkSection}
         >
           {item.title}
         </Typography>

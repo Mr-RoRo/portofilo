@@ -32,7 +32,7 @@ const projects = [
 ];
 const Projects = () => {
   return (
-    <Stack width="100%" bgcolor="background.paper">
+    <Stack id="Projects" width="100%" bgcolor="background.paper">
       <Container
         sx={{
           py: "80px",

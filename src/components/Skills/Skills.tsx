@@ -36,13 +36,13 @@ const skillsInfo = [
       "Learn New Things",
       "Coffee",
       "Black Color",
-      "Dark Mode",
+      "Music",
     ],
   },
 ];
 const Skills = () => {
   return (
-    <Stack>
+    <Stack id="Skills">
       <Container
         sx={{
           py: "80px",

@@ -12,6 +12,7 @@ const Hero = () => {
   return (
     <Stack
       width="100%"
+      id="Home"
       mt={TabletAndMobile ? "100px" : "200px"}
       mb={TabletAndMobile ? "100px" : "150px"}
     >

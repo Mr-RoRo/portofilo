@@ -31,7 +31,7 @@ const AboutMe = () => {
   const large = useMediaQuery(theme.breakpoints.up("xl"));
   const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Stack width="100%" bgcolor="background.paper" position="relative">
+    <Stack id="AboutMe" width="100%" bgcolor="background.paper" position="relative">
       <Container
         sx={{
           py: "80px",
