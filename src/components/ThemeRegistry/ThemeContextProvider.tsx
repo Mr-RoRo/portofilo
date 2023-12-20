@@ -1,6 +1,6 @@
 import { createTheme, Theme } from "@mui/material";
 import { createContext, FC, PropsWithChildren, useContext } from "react";
-import { useColorTheme } from "../theme/use-color-theme";
+import { useColorTheme } from "./use-color-theme";
 
 type ThemeContextType = {
   mode: string;

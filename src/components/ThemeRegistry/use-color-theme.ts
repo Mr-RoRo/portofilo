@@ -1,7 +1,6 @@
 import { createTheme, PaletteMode } from "@mui/material";
 import React from "react";
-import { getDesignTokens } from "../theme/theme.tsx";
-
+import { getDesignTokens } from "./theme";
 export const useColorTheme = () => {
   const [mode, setMode] = React.useState<PaletteMode>(
     localStorage.getItem("theme") as PaletteMode

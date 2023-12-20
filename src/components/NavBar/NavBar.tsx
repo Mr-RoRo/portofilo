@@ -10,9 +10,9 @@ import {
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
-import { useThemeContext } from "../../Theme/ThemeContextProvider";
 import { keyframes } from "@emotion/react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useThemeContext } from "../ThemeRegistry/ThemeContextProvider";
 
 const NavBar = () => {
   const { mode, toggleColorMode } = useThemeContext();
