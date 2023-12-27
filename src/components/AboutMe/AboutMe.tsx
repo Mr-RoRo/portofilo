@@ -12,10 +12,10 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import TitleShape from "../TitleShape/TitleShape";
 const AboutInfo = [
-  { id: 1, title: "Name", content: "Danial Abbaszadeh" },
-  { id: 2, title: "Age", content: "18" },
-  { id: 3, title: "E-mail", content: "fsoocity@gmail.com" },
-  { id: 4, title: "Location", content: "qom" },
+  { id: 1, title: "نام", content: "دانیال عباس زاده" },
+  { id: 2, title: "سن", content: "18" },
+  { id: 3, title: "آدرس ایمیل", content: "fsoocity@gmail.com" },
+  { id: 4, title: "محل زندگی", content: "قم" },
 ];
 const Icons = [
   { id: 1, link: "https://github.com/mR-RoRo", icon: <GitHubIcon /> },
@@ -31,7 +31,12 @@ const AboutMe = () => {
   const large = useMediaQuery(theme.breakpoints.up("xl"));
   const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Stack id="AboutMe" width="100%" bgcolor="background.paper" position="relative">
+    <Stack
+      id="AboutMe"
+      width="100%"
+      bgcolor="background.paper"
+      position="relative"
+    >
       <Container
         sx={{
           py: "80px",
@@ -54,7 +59,7 @@ const AboutMe = () => {
           alignItems={TabletAndMobile ? "center" : "flex-start"}
           width={TabletAndMobile ? "auto" : "800px"}
         >
-          <TitleShape title="About Me" />
+          <TitleShape title="درباره من" />
           <Stack>
             {AboutInfo.map((info) => (
               <Stack key={info.id} flexDirection="row" alignItems="center">
@@ -84,18 +89,18 @@ const AboutMe = () => {
             mt="25px"
             gap="25px"
             alignItems={TabletAndMobile ? "center" : "flex-start"}
-            textAlign={TabletAndMobile ? "center" : "left"}
+            textAlign={TabletAndMobile ? "center" : "right"}
           >
             <Typography variant="h2">
-              I am Danial Abbaszadeh, Web Developer
+              من دانیال عباس زاده هستم، یک توسعه دهنده وب
             </Typography>
             <Typography variant="body1" color="secondary">
-              Hello I’m a self-taught front-end developer based in Qom, Iran. I
-              can develop responsive websites from scratch and raise them into
-              modern user-friendly web experiences.
+              سلام من یک توسعه دهنده فرانت اند خودآموز هستم که در قم، ایران
+              زندگی میکنم. من میتونم وب سایت های واکنش گرا را از ابتدا توسعه دهم
+              و آنها را به تجربه های وب کاربر پسند مدرن تبدیل کنم.
             </Typography>
             <Stack gap="10px">
-              <Typography variant="body2">Find Me on Social Media:</Typography>
+              <Typography variant="body2">شبکه های اجتماعی من</Typography>
               <Stack
                 flexDirection="row"
                 color="primary.main"
@@ -127,7 +132,7 @@ const AboutMe = () => {
         <Typography
           sx={{ transform: "rotate(-90deg)" }}
           top="40%"
-          right="0"
+          left="0"
           position="absolute"
           fontSize="85px"
           color="#e4eef8"

@@ -7,7 +7,7 @@ const projects = [
   {
     id: 1,
     name: "ّFilmGard",
-    content: "a responsive site with react and mui about movies info",
+    content: "یک سایت واکنش گرا درباره فیلم ها با react و mui",
     image: proImg2,
     link: "http://film-gard.vercel.app/",
     sourceLink: "https://github.com/Mr-RoRo/FilmGard",
@@ -15,7 +15,7 @@ const projects = [
   {
     id: 2,
     name: "DShop",
-    content: "a responsive online shop with react and mui",
+    content: "صفحه اصلی یک سایت فروشگاهی بصورت واکنش گرا با react و mui",
     image: proImg1,
     link: "",
     sourceLink: "https://github.com/Mr-RoRo/dshop",
@@ -24,7 +24,7 @@ const projects = [
     id: 3,
     name: "Movazee",
     content:
-      "a responsive site with react , nextjs and mui about learning programing",
+      "یک سایت واکنش گرا درباره آموزش برنامه نویسی با react و nextjs و mui",
     image: proImg3,
     link: "https://movazee.ir/",
     sourceLink: "",
@@ -41,7 +41,7 @@ const Projects = () => {
           alignItems: "center",
         }}
       >
-        <TitleShape title="Personal Project" />
+        <TitleShape title="نمونه کارها" />
         <Grid container xl={13} justifyContent="center" spacing={4} pt="15px">
           {projects.map((item) => (
             <Grid key={item.id} item>
@@ -67,7 +67,7 @@ const Projects = () => {
                 <Stack
                   justifyContent="space-between"
                   height="150px"
-                  p="5px 15px"
+                  p="10px 15px 5px 15px"
                 >
                   <Typography variant="body2">{item.name}</Typography>
                   <Typography variant="body1">{item.content}</Typography>
@@ -78,7 +78,7 @@ const Projects = () => {
                       href={item.link}
                       target="_blank"
                     >
-                      Live Demo
+                      دمو
                     </Button>
                     {item.sourceLink && (
                       <Button
@@ -87,7 +87,7 @@ const Projects = () => {
                         href={item.sourceLink}
                         target="_blank"
                       >
-                        Source Code
+                        سورس کد
                       </Button>
                     )}
                   </Stack>

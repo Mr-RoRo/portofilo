@@ -23,25 +23,25 @@ const Hero = () => {
           justifyContent: "space-between",
           gap: TabletAndMobile ? "40px" : "80px",
           flexDirection: TabletAndMobile ? "column-reverse" : "row",
-          textAlign: TabletAndMobile ? "center" : "left",
+          textAlign: TabletAndMobile ? "center" : "right",
         }}
       >
         <Stack>
           <Typography variant="h1" color="primary">
-            I'M Danial Abbaszadeh
+            من دانیال عباس زاده هستم
           </Typography>
-          <Typography variant="h3" mt="10px" mb="20px">
-            Front End Developer
-          </Typography>
-          <Typography color="secondary" lineHeight={1.6} variant="body1">
-            Hello I’m a self-taught front-end developer based in Qom, Iran. I
-            can develop responsive websites from scratch and raise them into
-            modern user-friendly web experiences.
+          <Typography variant="h2" mt="12px" mb="15px">
+            یک توسعه دهنده وب
           </Typography>
           <Typography color="secondary" lineHeight={1.6} variant="body1">
-            I have been studying computer for more than a year and I have been
-            working in the web field for 8 months and I enjoy creating different
-            sites and it is my way of enjoying my life.
+            سلام من یک توسعه دهنده فرانت اند خودآموز هستم که در قم، ایران زندگی
+            میکنم. من میتونم وب سایت های واکنش گرا را از ابتدا توسعه دهم و آنها
+            را به تجربه های وب کاربر پسند مدرن تبدیل کنم.
+          </Typography>
+          <Typography color="secondary" lineHeight={1.6} variant="body1">
+            من 2 سال هست که در رشته کامپیوتر در حال تحصیل هستم و تقریبا 8 ماه
+            هست که به طراحی وب مشغول بودم و از خلق وب سایت های مخنلف لذت میبرم و
+            یکی از راه های خارج شدنم از سختی زندگیه
           </Typography>
         </Stack>
         <Stack

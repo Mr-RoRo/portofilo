@@ -4,12 +4,12 @@ import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
 const skillsInfo = [
   {
     id: 1,
-    title: "Coding Skills",
+    title: "مهارت های کدزنی",
     listItem: ["HTML / CSS / Js / Typescript", "React", "MaterialUI", "Access"],
   },
   {
     id: 2,
-    title: "Tools & Technologies",
+    title: "ابزار و تکنولوژی ها",
     listItem: [
       "Visual Studio Code",
       "Git & Github",
@@ -19,25 +19,19 @@ const skillsInfo = [
   },
   {
     id: 3,
-    title: "Industry Knowledge",
-    listItem: ["Web Development", "Responsive Web Design", "React Website"],
+    title: "دانش صعنت",
+    listItem: ["توسعه وب", "طراحی وب واکنش گرا"],
   },
   {
     id: 4,
-    title: "Other Skills",
-    listItem: ["Basic Computer", "Computer Hardware"],
+    title: "مهارت های دیگر",
+    listItem: ["مقدماتی کامپیوتر", "سخت افزار کامپیوتر"],
   },
-  { id: 5, title: "Language Skills", listItem: ["English"] },
+  { id: 5, title: "زبان", listItem: ["انگلیسی"] },
   {
     id: 6,
-    title: "Interests",
-    listItem: [
-      "Coding",
-      "Learn New Things",
-      "Coffee",
-      "Black Color",
-      "Music",
-    ],
+    title: "علاقمندی ها",
+    listItem: ["کد زدن", "یادگیری چیزهای جدید", "قهوه", "بازی", "موزیک"],
   },
 ];
 const Skills = () => {
@@ -51,7 +45,7 @@ const Skills = () => {
           alignItems: "center",
         }}
       >
-        <TitleShape title="My Skills" />
+        <TitleShape title="مهارت های من" />
         <Grid container xl={16} justifyContent="center" spacing={4} pt="15px">
           {skillsInfo.map((item) => (
             <Grid key={item.id} item>

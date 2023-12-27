@@ -78,7 +78,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
     },
   },
   typography: {
-    fontFamily: `'Kanit', sans-serif`,
+    fontFamily: `'Vazirmatn', sans-serif`,
     h1: {
       fontSize: "36px",
       fontWeight: "bold",

@@ -10,7 +10,6 @@ import {
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
-import { keyframes } from "@emotion/react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useThemeContext } from "../ThemeRegistry/ThemeContextProvider";
 
@@ -22,27 +21,12 @@ const NavBar = () => {
   const theme = useTheme();
   const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const navInfo = [
-    { id: 1, title: "Home", linkSection: "#root" },
-    { id: 2, title: "About", linkSection: "#AboutMe" },
-    { id: 3, title: "Skills", linkSection: "#Skills" },
-    { id: 4, title: "Works", linkSection: "#Projects" },
+    { id: 1, title: "خانه", linkSection: "#root" },
+    { id: 2, title: "درباره من", linkSection: "#AboutMe" },
+    { id: 3, title: "مهارت های من", linkSection: "#Skills" },
+    { id: 4, title: "نمونه کار", linkSection: "#Projects" },
   ];
-  const DarkToLight = keyframes`
-  from {
-    transform: translateX(22px);
-  }
-  to {
-    transform: translateX(6px);
-  }
-`;
-  const LightToDark = keyframes`
-  from {
-    transform: translateX(6px);
-  }
-  to {
-    transform: translateX(22px);
-  }
-`;
+
   window.addEventListener("scroll", () => {
     setScrollY(scrollY);
   });
@@ -53,11 +37,9 @@ const NavBar = () => {
     "& .MuiSwitch-switchBase": {
       margin: 1,
       padding: 0,
-      animation: `${mode === "dark" ? DarkToLight : LightToDark} 0.3s ease`,
       transform: mode === "dark" ? "translateX(6px)" : "translateX(22px)",
       "&.Mui-checked": {
         color: "#fff",
-        animation: `${mode === "dark" ? LightToDark : DarkToLight} 0.3s ease`,
         transform: mode === "dark" ? "translateX(22px)" : "translateX(6px)",
         "& .MuiSwitch-thumb:before": {
           backgroundImage:
@@ -118,7 +100,6 @@ const NavBar = () => {
           key={item.id}
           borderBottom={TabletAndMobile ? "1px solid" : "none"}
           borderColor="background.default"
-          width="100%"
           textAlign="center"
           pb={TabletAndMobile ? "25px" : "0"}
           onClick={() => {

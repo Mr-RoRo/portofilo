@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: "Kanit", sans-serif;
   scroll-behavior: smooth;
+  direction: rtl;
 }
 a {
   text-decoration: none;
