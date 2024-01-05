@@ -1,11 +1,27 @@
-import { Container, Divider, Grid, Stack, Typography } from "@mui/material";
+import {
+  Container,
+  Divider,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import TitleShape from "../TitleShape/TitleShape";
 import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
+
 const skillsInfo = [
   {
     id: 1,
     title: "مهارت های کدزنی",
-    listItem: ["HTML / CSS / Js / Typescript", "React", "MaterialUI", "Access"],
+    listItem: [
+      "HTML / CSS / Js / Typescript",
+      "React",
+      "MaterialUI",
+      "TailWind",
+      "MySql",
+      "Next Js",
+    ],
   },
   {
     id: 2,
@@ -15,6 +31,7 @@ const skillsInfo = [
       "Git & Github",
       "Adobe Photoshop",
       "Figma",
+      "Prisma",
     ],
   },
   {
@@ -35,6 +52,8 @@ const skillsInfo = [
   },
 ];
 const Skills = () => {
+  const theme = useTheme();
+  const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Stack id="Skills">
       <Container
@@ -46,14 +65,20 @@ const Skills = () => {
         }}
       >
         <TitleShape title="مهارت های من" />
-        <Grid container xl={16} justifyContent="center" spacing={4} pt="15px">
+        <Grid
+          container
+          xl={16}
+          justifyContent="center"
+          spacing={TabletAndMobile ? 2 : 4}
+          pt="15px"
+        >
           {skillsInfo.map((item) => (
             <Grid key={item.id} item>
               <Stack
                 p="20px"
                 boxShadow={3}
-                width="350px"
-                height="300px"
+                width={TabletAndMobile ? "250px" : "350px"}
+                height={TabletAndMobile ? "380px" : "300px"}
                 borderRadius="12px"
                 bgcolor="background.paper"
                 sx={{
@@ -76,12 +101,7 @@ const Skills = () => {
                 />
                 <Stack gap="20px">
                   {item.listItem.map((thing) => (
-                    <Stack
-                      key={thing}
-                      flexDirection="row"
-                      alignItems="center"
-                      gap="5px"
-                    >
+                    <Stack key={thing} flexDirection="row" gap="5px">
                       <RadioButtonCheckedIcon
                         color="primary"
                         fontSize="small"
