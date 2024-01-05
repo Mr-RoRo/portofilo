@@ -23,7 +23,7 @@ const projects = [
   {
     id: 2,
     name: "DShop",
-    content: "صفحه اصلی یک سایت فروشگاهی بصورت واکنش گرا با react و mui",
+    content: "صفحه اصلی یک سایت فروشگاهی بصورت واکنش گرا ساخته شده با react و mui",
     image: proImg1,
     link: "",
     sourceLink: "https://github.com/Mr-RoRo/dshop",
@@ -32,7 +32,7 @@ const projects = [
     id: 3,
     name: "Movazee",
     content:
-      "یک سایت واکنش گرا درباره آموزش برنامه نویسی با react و nextjs و mui",
+      "یک سایت واکنش گرا درباره آموزش برنامه نویسی ساخته شده با react و nextjs و mui",
     image: proImg3,
     link: "https://movazee.ir/",
     sourceLink: "",
@@ -57,8 +57,8 @@ const Projects = () => {
             <Grid key={item.id} item>
               <Stack
                 boxShadow={3}
-                width={TabletAndMobile ? "250px" : "300px"}
-                height="350px"
+                width={TabletAndMobile ? "270px" : "300px"}
+                height="360px"
                 borderRadius="12px"
                 bgcolor="background.default"
                 sx={{
@@ -76,7 +76,7 @@ const Projects = () => {
                 />
                 <Stack
                   justifyContent="space-between"
-                  height="150px"
+                  height="170px"
                   p="10px 15px 5px 15px"
                 >
                   <Typography variant="body2">{item.name}</Typography>

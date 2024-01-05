@@ -77,8 +77,8 @@ const Skills = () => {
               <Stack
                 p="20px"
                 boxShadow={3}
-                width={TabletAndMobile ? "250px" : "350px"}
-                height={TabletAndMobile ? "380px" : "300px"}
+                width={TabletAndMobile ? "270px" : "350px"}
+                height={TabletAndMobile ? "380px" : "340px"}
                 borderRadius="12px"
                 bgcolor="background.paper"
                 sx={{
