@@ -101,6 +101,7 @@ const NavBar = () => {
           borderBottom={TabletAndMobile ? "1px solid" : "none"}
           borderColor="background.default"
           textAlign="center"
+          width={TabletAndMobile ? "100%" : "auto"}
           pb={TabletAndMobile ? "25px" : "0"}
           onClick={() => {
             setSelectedSec(item.title);
@@ -150,7 +151,7 @@ const NavBar = () => {
             </IconButton>
 
             <Drawer
-              anchor="right"
+              anchor="left"
               open={modalOpen}
               onClose={() => setModalOpen(false)}
             >
