@@ -1,4 +1,12 @@
-import { Button, Container, Grid, Stack, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import TitleShape from "../TitleShape/TitleShape";
 import proImg1 from "../../assets/DShop.png";
 import proImg2 from "../../assets/filmgard.png";
@@ -31,6 +39,8 @@ const projects = [
   },
 ];
 const Projects = () => {
+  const theme = useTheme();
+  const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Stack id="Projects" width="100%" bgcolor="background.paper">
       <Container
@@ -42,12 +52,12 @@ const Projects = () => {
         }}
       >
         <TitleShape title="نمونه کارها" />
-        <Grid container xl={13} justifyContent="center" spacing={4} pt="15px">
+        <Grid container xl={13} justifyContent="center" spacing={2} pt="15px">
           {projects.map((item) => (
             <Grid key={item.id} item>
               <Stack
                 boxShadow={3}
-                width="300px"
+                width={TabletAndMobile ? "250px" : "300px"}
                 height="350px"
                 borderRadius="12px"
                 bgcolor="background.default"
