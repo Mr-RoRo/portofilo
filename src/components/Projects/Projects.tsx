@@ -52,7 +52,7 @@ const Projects = () => {
         }}
       >
         <TitleShape title="نمونه کارها" />
-        <Grid container xl={13} justifyContent="center" spacing={2} pt="15px">
+        <Grid container xl={13} justifyContent="center" spacing={TabletAndMobile ? 2 : 4} pt="15px">
           {projects.map((item) => (
             <Grid key={item.id} item>
               <Stack
