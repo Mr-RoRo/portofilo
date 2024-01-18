@@ -22,9 +22,9 @@ const NavBar = () => {
   const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const navInfo = [
     { id: 1, title: "خانه", linkSection: "#root" },
-    { id: 2, title: "درباره من", linkSection: "#AboutMe" },
-    { id: 3, title: "مهارت های من", linkSection: "#Skills" },
-    { id: 4, title: "نمونه کار", linkSection: "#Projects" },
+    { id: 2, title: "من کی هستم", linkSection: "#AboutMe" },
+    { id: 3, title: "چی بلدم", linkSection: "#Skills" },
+    { id: 4, title: "چی خلق کردم", linkSection: "#Projects" },
   ];
 
   window.addEventListener("scroll", () => {

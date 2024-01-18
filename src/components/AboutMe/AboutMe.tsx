@@ -59,7 +59,7 @@ const AboutMe = () => {
           alignItems={TabletAndMobile ? "center" : "flex-start"}
           width={TabletAndMobile ? "auto" : "800px"}
         >
-          <TitleShape title="درباره من" />
+          <TitleShape title="من کی هستم" />
           <Stack>
             {AboutInfo.map((info) => (
               <Stack key={info.id} flexDirection="row" alignItems="center">

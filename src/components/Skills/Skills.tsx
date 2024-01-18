@@ -64,7 +64,7 @@ const Skills = () => {
           alignItems: "center",
         }}
       >
-        <TitleShape title="مهارت های من" />
+        <TitleShape title="چی بلدم" />
         <Grid
           container
           xl={16}
