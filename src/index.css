@@ -3,10 +3,16 @@
 *::before {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Kanit", sans-serif;
+  font-family: "YekanBakhVF";
   scroll-behavior: smooth;
   direction: rtl;
 }
 a {
   text-decoration: none;
+}
+@font-face {
+  font-family: "YekanBakhVF";
+  src: url("Fonts/YekanBakh-VF.ttf");
+  font-weight: 100 900;
+  font-style: normal;
 }
