@@ -53,6 +53,8 @@ const Projects = () => {
                 width={TabletAndMobile ? "270px" : "300px"}
                 borderRadius="8px"
                 bgcolor="background.default"
+                component="a"
+                href={item.link}
                 sx={{
                   ":before": {
                     content: '""',
