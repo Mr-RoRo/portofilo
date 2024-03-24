@@ -1,5 +1,4 @@
 import {
-  Button,
   Container,
   Grid,
   Stack,
@@ -7,35 +6,23 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import proImg1 from "../../assets/moviePicker.webp";
+import proImg2 from "../../assets/movazee.webp";
 import TitleShape from "../TitleShape/TitleShape";
-import proImg1 from "../../assets/DShop.png";
-import proImg2 from "../../assets/filmgard.png";
-import proImg3 from "../../assets/movazee.png";
 const projects = [
   {
     id: 1,
-    name: "ّFilmGard",
-    content: "یک سایت واکنش گرا درباره فیلم ها با react و mui",
-    image: proImg2,
-    link: "http://film-gard.vercel.app/",
-    sourceLink: "https://github.com/Mr-RoRo/FilmGard",
+    name: "Movie Picker",
+    description: "یک سایت ریسپانسیو ساخته شده با react , tailwind , daisyui",
+    image: proImg1,
+    link: "https://moviepicker-one.vercel.app/",
   },
   {
     id: 2,
-    name: "DShop",
-    content: "صفحه اصلی یک سایت فروشگاهی بصورت واکنش گرا ساخته شده با react و mui",
-    image: proImg1,
-    link: "",
-    sourceLink: "https://github.com/Mr-RoRo/dshop",
-  },
-  {
-    id: 3,
     name: "Movazee",
-    content:
-      "یک سایت واکنش گرا درباره آموزش برنامه نویسی ساخته شده با react و nextjs و mui",
-    image: proImg3,
+    description: "یک سایت ساخته شده با next js , react , mui",
+    image: proImg2,
     link: "https://movazee.ir/",
-    sourceLink: "",
   },
 ];
 const Projects = () => {
@@ -52,55 +39,66 @@ const Projects = () => {
         }}
       >
         <TitleShape title="چی خلق کردم" />
-        <Grid container xl={13} justifyContent="center" spacing={TabletAndMobile ? 2 : 4} pt="15px">
+        <Grid
+          container
+          xl={13}
+          justifyContent="center"
+          spacing={TabletAndMobile ? 2 : 4}
+          pt="15px"
+        >
           {projects.map((item) => (
             <Grid key={item.id} item>
               <Stack
                 boxShadow={3}
                 width={TabletAndMobile ? "270px" : "300px"}
-                height="360px"
-                borderRadius="12px"
+                borderRadius="8px"
                 bgcolor="background.default"
                 sx={{
-                  transition: "transform 0.2s ease-in-out",
+                  ":before": {
+                    content: '""',
+                    position: "absolute",
+                    zIndex: -1,
+                    top: 0,
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    borderRadius: "8px",
+                    backgroundImage: `url(${item.image})`,
+                  },
                   ":hover": {
                     transform: "scale(1.05)",
                   },
+                  position: "relative",
+                  zIndex: 1,
+                  transition: "transform 0.2s ease-in-out",
+                  height: "180px",
                 }}
               >
                 <Stack
-                  component="img"
-                  borderRadius="12px"
-                  src={item.image}
+                  component="span"
+                  borderRadius="8px"
                   height="180px"
-                />
-                <Stack
-                  justifyContent="space-between"
-                  height="170px"
-                  p="10px 15px 5px 15px"
+                  sx={{
+                    ":hover": {
+                      opacity: 0.7,
+                    },
+                    transition: "opacity 0.2s ease-in-out",
+                    background:
+                      "linear-gradient(to right bottom, #111, #202020)",
+                    opacity: 0,
+                    position: "absolute",
+                    left: 0,
+                    right: 0,
+                    p: "8px 12px",
+                    justifyContent: "space-between",
+                  }}
                 >
-                  <Typography variant="body2">{item.name}</Typography>
-                  <Typography variant="body1">{item.content}</Typography>
-                  <Stack flexDirection="row" gap="8px">
-                    <Button
-                      variant="outlined"
-                      fullWidth
-                      href={item.link}
-                      target="_blank"
-                    >
-                      دمو
-                    </Button>
-                    {item.sourceLink && (
-                      <Button
-                        variant="outlined"
-                        fullWidth
-                        href={item.sourceLink}
-                        target="_blank"
-                      >
-                        سورس کد
-                      </Button>
-                    )}
-                  </Stack>
+                  <Typography textAlign="left" color="white">
+                    {item.name}
+                  </Typography>
+                  <Typography textAlign="center" color="white">
+                    {item.description}
+                  </Typography>
                 </Stack>
               </Stack>
             </Grid>
