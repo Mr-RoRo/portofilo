@@ -15,7 +15,7 @@ const projects = [
     name: "Movie Picker",
     description: "یک سایت ریسپانسیو ساخته شده با react , tailwind , daisyui",
     image: proImg1,
-    link: "https://moviepicker-one.vercel.app/",
+    link: "https://moviepicker-eight.vercel.app/",
   },
   {
     id: 2,
