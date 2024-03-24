@@ -1,4 +1,5 @@
 import {
+  Button,
   Container,
   Grid,
   Stack,
@@ -16,6 +17,7 @@ const projects = [
     description: "یک سایت ریسپانسیو ساخته شده با react , tailwind , daisyui",
     image: proImg1,
     link: "https://moviepicker-eight.vercel.app/",
+    sourceLink: "https://github.com/Mr-RoRo/Movie_Picker",
   },
   {
     id: 2,
@@ -51,56 +53,49 @@ const Projects = () => {
               <Stack
                 boxShadow={3}
                 width={TabletAndMobile ? "270px" : "300px"}
+                height="360px"
                 borderRadius="8px"
                 bgcolor="background.default"
-                component="a"
-                href={item.link}
                 sx={{
-                  ":before": {
-                    content: '""',
-                    position: "absolute",
-                    zIndex: -1,
-                    top: 0,
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    borderRadius: "8px",
-                    backgroundImage: `url(${item.image})`,
-                  },
+                  transition: "transform 0.2s ease-in-out",
                   ":hover": {
                     transform: "scale(1.05)",
                   },
-                  position: "relative",
-                  zIndex: 1,
-                  transition: "transform 0.2s ease-in-out",
-                  height: "180px",
                 }}
               >
                 <Stack
-                  component="span"
-                  borderRadius="8px"
+                  component="img"
+                  borderRadius="8px 8px 0 0"
+                  src={item.image}
                   height="180px"
-                  sx={{
-                    ":hover": {
-                      opacity: 0.7,
-                    },
-                    transition: "opacity 0.2s ease-in-out",
-                    background:
-                      "linear-gradient(to right bottom, #111, #202020)",
-                    opacity: 0,
-                    position: "absolute",
-                    left: 0,
-                    right: 0,
-                    p: "8px 12px",
-                    justifyContent: "space-between",
-                  }}
+                />
+                <Stack
+                  justifyContent="space-between"
+                  height="170px"
+                  p="10px 15px 5px 15px"
                 >
-                  <Typography textAlign="left" color="white">
-                    {item.name}
-                  </Typography>
-                  <Typography textAlign="center" color="white">
-                    {item.description}
-                  </Typography>
+                  <Typography variant="body2">{item.name}</Typography>
+                  <Typography variant="body1">{item.description}</Typography>
+                  <Stack flexDirection="row" gap="8px">
+                    <Button
+                      variant="outlined"
+                      fullWidth
+                      href={item.link}
+                      target="_blank"
+                    >
+                      دمو
+                    </Button>
+                    {item.sourceLink && (
+                      <Button
+                        variant="outlined"
+                        fullWidth
+                        href={item.sourceLink}
+                        target="_blank"
+                      >
+                        سورس کد
+                      </Button>
+                    )}
+                  </Stack>
                 </Stack>
               </Stack>
             </Grid>
