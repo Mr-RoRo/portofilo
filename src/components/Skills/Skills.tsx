@@ -1,14 +1,12 @@
+import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
 import {
   Container,
   Divider,
   Grid,
   Stack,
-  Typography,
-  useMediaQuery,
-  useTheme,
+  Typography
 } from "@mui/material";
 import TitleShape from "../TitleShape/TitleShape";
-import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
 
 const skillsInfo = [
   {
@@ -52,8 +50,6 @@ const skillsInfo = [
   },
 ];
 const Skills = () => {
-  const theme = useTheme();
-  const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Stack id="Skills">
       <Container
@@ -65,20 +61,13 @@ const Skills = () => {
         }}
       >
         <TitleShape title="چی بلدم" />
-        <Grid
-          container
-          xl={16}
-          justifyContent="center"
-          spacing={TabletAndMobile ? 2 : 4}
-          pt="15px"
-        >
+        <Grid container xs={11} justifyContent="center" spacing={4} pt="15px">
           {skillsInfo.map((item) => (
-            <Grid key={item.id} item>
+            <Grid xs={12} sm={6} md={4} key={item.id} item>
               <Stack
                 p="20px"
                 boxShadow={3}
-                width={TabletAndMobile ? "270px" : "350px"}
-                height={TabletAndMobile ? "380px" : "340px"}
+                height={"100%"}
                 borderRadius="12px"
                 bgcolor="background.paper"
                 sx={{
