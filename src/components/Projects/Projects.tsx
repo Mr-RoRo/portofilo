@@ -3,12 +3,10 @@ import {
   Container,
   Grid,
   Stack,
-  Typography,
-  useMediaQuery,
-  useTheme,
+  Typography
 } from "@mui/material";
-import proImg1 from "../../assets/moviePicker.webp";
 import proImg2 from "../../assets/movazee.webp";
+import proImg1 from "../../assets/moviePicker.webp";
 import TitleShape from "../TitleShape/TitleShape";
 const projects = [
   {
@@ -28,8 +26,6 @@ const projects = [
   },
 ];
 const Projects = () => {
-  const theme = useTheme();
-  const TabletAndMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Stack id="Projects" width="100%" bgcolor="background.paper">
       <Container
@@ -41,19 +37,12 @@ const Projects = () => {
         }}
       >
         <TitleShape title="چی خلق کردم" />
-        <Grid
-          container
-          xl={13}
-          justifyContent="center"
-          spacing={TabletAndMobile ? 2 : 4}
-          pt="15px"
-        >
+        <Grid container xs={12} justifyContent="center" spacing={4} pt="15px">
           {projects.map((item) => (
-            <Grid key={item.id} item>
+            <Grid xs={12} sm={6} md={4} lg={3} key={item.id} item>
               <Stack
                 boxShadow={3}
-                width={TabletAndMobile ? "270px" : "300px"}
-                height="360px"
+                height="100%"
                 borderRadius="8px"
                 bgcolor="background.default"
                 sx={{
@@ -72,7 +61,7 @@ const Projects = () => {
                 <Stack
                   justifyContent="space-between"
                   height="170px"
-                  p="10px 15px 5px 15px"
+                  p="10px 15px 10px 15px"
                 >
                   <Typography variant="body2">{item.name}</Typography>
                   <Typography variant="body1">{item.description}</Typography>
